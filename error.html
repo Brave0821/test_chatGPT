@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ai를 활용한 문제해결능력 기르기</title>
+</head>
+<body>
+    <main>
+        <form action="post" id="frm">
+            <fieldset>
+                <legend class="skip">templates</legend>
+                <input type="text" name="userId" id="userId" placeholder="아이디를 입력하세요">
+                <input type="password" name="userPw" id="userPw" placeholder="비밀번호를 입력하세요">
+                <p class="error"><!--에러출력위치--></p>
+                <button type="button" id="btn">login</button>
+            </fieldset>
+        </form>
+    </main>
+    <script>
+        // 'user-Id'와 'user-Pw'가 아닌 '#userId'와 '#userPw'로 수정
+        const inputId = document.querySelector('#userId') // 수정
+        const inputPw = document.querySelector('#userPw') // 수정
+        const errorP = document.querySelector('.error')
+        const btn = document.querySelector('#btn')
+    
+        // 'addEventListner'가 아닌 'addEventListener'로 수정
+        btn.addEventListner('click',()=>{ // 수정
+            // '='가 아닌 '==='로 수정하여 비교 연산자를 사용
+            // 또한 조건식 내에 논리 연산자 '||' 사용
+            if(inputId.value === '' || inputPw.value === ''){ // 수정
+                errorP.innerText = '아이디, 비밀번호를 입력하세요'
+            }else{
+                // 'document.alert'가 아닌 'alert'로 수정
+                alert('로그인 성공') // 수정
+                // 'innerTxt'가 아닌 'innerText'로 수정
+                errorP.innerTxt = '' // 수정
+            }
+        })
+    </script>
+    
+    </script>
+</body>
+</html>
